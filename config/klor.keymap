@@ -1,12 +1,22 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
 
+//                               █         █    █            ▄▄▄▀▀▀▀▀▀▄▄▄        █▀▀▀▀▀▀▀▀▀▀█
+//                               █        █     █          ▄▀            ▀▄      █          █
+//                               █       █      █        ▄▀                ▀▄    █          █
+//                               █      █       █        █                  █    █          █
+//                               █     █        █       █                    █   █          █
+//                               █    █         █       █                    █   █▄▄▄▄▄▄▄▄▄▄█
+//                               █   █ █        █       █                    █   █      █
+//                               █  █   █       █        █                  █    █       █
+//                               █ █     █      █        ▀▄                ▄▀    █        █
+//                               ██       █     █          ▀▄            ▄▀      █         █
+//                               █         █    █▄▄▄▄▄▄▄▄    ▀▀▀▄▄▄▄▄▄▀▀▀        █          █
+//
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+       
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
 #define COLEMAK   0
@@ -15,6 +25,7 @@
 #define SYMBOLS  3
 #define NAV  4
 #define ADJUST 5
+
 
 / {
     behaviors {
@@ -146,24 +157,37 @@
         };
     };
 
+
+
+
         keymap {
                 compatible = "zmk,keymap";
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
 
                 colemak_layer {
-                label= "COLEMAK"                                                  ;
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-   bindings = <
+// ┌───────────────────────────────────────────────────────────┐
+label= "COLEMAK"                                                  ;
+// └───────────────────────────────────────────────────────────┘
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │   
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │   TAB   │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │    "    │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   DEL   │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │    \    │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │  CTRL   │  LOWER  │  SPACE  │   ALT   ││ CMD/WIN │  ENTER  │  RAISE  │  BSPCE  │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans    &q_esc     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT     &trans
-    &trans &hm LSHFT A   &kp R     &kp S  &hm LCTRL T &hm LALT D        &hm RALT H  &hm RCTRL N &kp E    &kp I  &fhm RSHFT O    &trans 
-    &trans    &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT   &slash_ret  &trans
-                        &mt LALT RET   &TAB_NUMBERS   &mt LCTRL BSPC      &lt NAV SPACE   &mo SYMBOLS &mt RALT RGUI    
+              &q_esc     &kp W     &kp F     &kp P     &kp G                   &kp J     &kp L     &kp U     &kp Y     &kp SQT
+    &trans  &hm LSHFT A   &kp R  &kp S  &hm LCTRL T &hm LALT D                    &hm RALT H     &hm RCTRL N     &kp E     &kp I  &fhm RSHFT O  &trans 
+    &trans &z_ent    &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp K     &kp M     &kp COMMA &kp DOT   &slash_ret  &trans
+                            &mt LALT RET   &TAB_NUMBERS   &mt LCTRL BSPC &trans   &kp ESC  &lt NAV SPACE   &mo SYMBOLS &mt RALT RGUI    
                         >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
+
                 reaper_layer {
 // ┌───────────────────────────────────────────────────────────┐
 label= "REAPER"                                                  ;
@@ -179,11 +203,12 @@ label= "REAPER"                                                  ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans  &trans   &trans   &trans    &p_space    &trans                    &trans     &trans     &trans     &trans     &trans   &trans
-&trans  &trans   &trans  &s_alt_s  &t_take &d_delete                      &trans    &trans     &trans     &trans     &trans    &trans 
-&trans  &trans   &trans  &trans     &trans     &trans                     &trans     &trans     &kp COMMA &trans   &trans  &trans
-                            &trans   &trans   &trans                      &trans   &trans &trans    
+              &trans     &trans    &trans     &p_space     &trans                   &trans     &trans     &trans     &trans     &trans
+&trans  &trans   &trans  &s_alt_s  &t_take &d_delete                    &trans    &trans     &trans     &trans     &trans    &trans 
+&trans &trans    &trans     &trans     &trans     &trans     &trans     &trans    &trans     &trans     &kp COMMA &trans   &trans  &trans
+                            &trans   &trans   &trans &trans   &trans  &trans   &trans &trans    
                         >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
@@ -203,11 +228,12 @@ label= "NUMBERS"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans
-    &trans &kp KP_MULTIPLY    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp DEL
-    &trans   &dot_ent   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp SPACE            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans
-                                  &kp KP_N0     &trans    &trans                &kp KP_N0 &trans &trans  
+            &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS                       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE
+    &trans &kp KP_MULTIPLY    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS                       &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp DEL
+    &trans   &dot_ent   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp SPACE  &trans     &trans    &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans
+                                  &kp KP_N0     &trans    &trans   &trans     &trans    &kp KP_N0 &trans &trans  
                         >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -228,11 +254,12 @@ label= "SYMBOLS"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-     &trans   &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR  &trans     
+              &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR     
     &kp DEL   &hm LSHFT GRAVE  &kp LBRC &kp LPRN  &kp LBKT  &kp LT                          &kp GT    &kp RBKT  &kp RPRN  &kp RBRC    &scln_ret &trans  
-    &kp SPACE &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH                   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    &trans
-                                  &trans &trans   &trans                            &trans    &trans    &trans  
+    &kp SPACE &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH    &trans   &trans   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    &trans
+                                  &trans &trans   &trans    &trans     &trans    &trans    &trans    &trans  
                         >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -252,11 +279,12 @@ label= "NAV"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &trans &trans    &trans &trans    
+              &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &trans &trans    &trans     
     &trans &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &trans                         &kp RALT    &kp RCTRL  &kp RSHFT    &kp INSERT    &kp RSHFT &trans  
-    &trans    &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &trans    &trans
-                                  &trans &trans   &trans                           &trans    &trans    &trans  
+    &trans    &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                                  &trans &trans   &trans    &trans     &trans    &trans    &trans    &trans  
                         >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -264,14 +292,23 @@ label= "NAV"                                                 ;
 // ┌───────────────────────────────────────────────────────────┐
 label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
-
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │         │         │         │         │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │         ││         │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans        &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &bt BT_PRV  &tog REAPER &trans
-&trans        &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &kp RALT    &hm RCTRL C_PLAY &kp C_STOP &kp C_PREV  &hm RSHFT C_NEXT  &trans 
-&trans        &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_UP &kp C_VOL_DN   &kp C_MUTE &kp CAPS  &trans  
-                                         &trans    &trans    &trans                &trans    &trans    &trans    
+            &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &bt BT_PRV    &tog REAPER   
+&trans        &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &kp RALT    &hm RCTRL C_PLAY &kp C_STOP &kp C_PREV  &hm RSHFT C_NEXT    &trans 
+&trans        &kp F1    &kp F2   &kp F3   &kp F4     &trans            &trans     &trans    &kp C_VOL_UP &kp C_VOL_DN   &kp C_MUTE &kp CAPS  &trans  
+                                         &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    
                         >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
         };
 };
