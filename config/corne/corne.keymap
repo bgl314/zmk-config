@@ -158,9 +158,9 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &q_esc     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT     
-    &hm LSHFT A   &kp R     &kp S  &hm LCTRL T &hm LALT D        &hm RALT H  &hm RCTRL N &kp E    &kp I  &fhm RSHFT O     
-    &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT   &slash_ret  
+    &trans &q_esc     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
+    &trans &hm LSHFT A   &kp R     &kp S  &hm LCTRL T &hm LALT D        &hm RALT H  &hm RCTRL N &kp E    &kp I  &fhm RSHFT O   &trans   
+    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT   &slash_ret  &trans 
                         &mt LALT RET   &TAB_NUMBERS   &mt LCTRL BSPC      &lt NAV SPACE   &mo SYMBOLS &mt RALT RGUI    
                         >;
                 };
@@ -179,9 +179,9 @@ label= "REAPER"                                                  ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans   &trans   &trans    &p_space    &trans                    &trans     &trans     &trans     &trans     &trans
-&trans   &trans  &s_alt_s  &t_take &d_delete                      &trans    &trans     &trans     &trans     &trans 
-&trans   &trans  &trans     &trans     &trans                     &trans     &trans     &kp COMMA &trans   &trans
+&trans &trans   &trans   &trans    &p_space    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
+&trans &trans   &trans  &s_alt_s  &t_take &d_delete                      &trans    &trans     &trans     &trans     &trans &trans 
+&trans &trans   &trans  &trans     &trans     &trans                     &trans     &trans     &kp COMMA &trans   &trans &trans 
                             &trans   &trans   &trans                      &trans   &trans &trans    
                         >;
                 };
@@ -203,9 +203,9 @@ label= "NUMBERS"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE 
-   &kp KP_MULTIPLY    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY 
-   &dot_ent   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp SPACE            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent 
+ &trans   &kp KP_DIVIDE &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
+ &trans   &kp KP_MULTIPLY    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
+ &trans   &dot_ent   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp SPACE            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
                                   &kp KP_N0     &trans    &trans                &kp KP_N0 &trans &trans  
                         >;
                 };
@@ -228,9 +228,9 @@ label= "SYMBOLS"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      
-    &hm LSHFT GRAVE  &kp LBRC &kp LPRN  &kp LBKT  &kp LT                          &kp GT    &kp RBKT  &kp RPRN  &kp RBRC    &scln_ret   
-    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH                   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    
+ &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
+ &trans    &hm LSHFT GRAVE  &kp LBRC &kp LPRN  &kp LBKT  &kp LT                          &kp GT    &kp RBKT  &kp RPRN  &kp RBRC    &scln_ret   &trans 
+ &trans    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH                   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    &trans 
                                   &trans &trans   &trans                            &trans    &trans    &trans  
                         >;
                 };
@@ -252,9 +252,9 @@ label= "NAV"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &trans &trans    &trans     
-    &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &trans                         &kp RALT    &kp RCTRL  &kp RSHFT    &kp INSERT    &kp RSHFT   
-       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &trans    
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &trans &trans    &trans     &trans 
+   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &trans                         &kp RALT    &kp RCTRL  &kp RSHFT    &kp INSERT    &kp RSHFT   &trans 
+   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &trans    &trans 
                                   &trans &trans   &trans                           &trans    &trans    &trans  
                         >;
                 };
@@ -267,9 +267,9 @@ label= "ADJUST"                                                ;
 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &bt BT_PRV  &tog REAPER 
-&kp F5      &kp F6   &kp F7   &kp F8     &trans                      &kp RALT    &hm RCTRL C_PLAY &kp C_STOP &kp C_PREV  &hm RSHFT C_NEXT   
-&kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_UP &kp C_VOL_DN   &kp C_MUTE &kp CAPS    
+&trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &bt BT_PRV  &tog REAPER &trans 
+&trans &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &kp RALT    &hm RCTRL C_PLAY &kp C_STOP &kp C_PREV  &hm RSHFT C_NEXT  &trans  
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_UP &kp C_VOL_DN   &kp C_MUTE &kp CAPS    &trans 
                                          &trans    &trans    &trans                &trans    &trans    &trans    
                         >;
                 };
