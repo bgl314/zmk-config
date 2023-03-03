@@ -79,9 +79,13 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
     mods = <(MOD_LSFT)>;
 )
 
-ZMK_BEHAVIOR(cm_semi, mod_morph,
-    bindings = <&kp COMMA>, <&kp SEMI>;
-    mods = <(MOD_LSFT)>;
+ZMK_BEHAVIOR(dot_semi, mod_morph,
+    bindings = <&kp DOT>, <&kp SEMI>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(cm_colon, mod_morph,
+    bindings = <&kp COMMA>, <&kp RS(SEMI)>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // use global-quick-tap-ms for combos (requires PR 1387)
@@ -92,13 +96,13 @@ ZMK_BEHAVIOR(cm_semi, mod_morph,
 #define COMBO_TERM_SLOW 35
 /* Brackets (horizontal right hand) */
 ZMK_COMBO(lbrc,  &kp LBRC,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RM2 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &kp RBRC,      RM4 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(lpar,  &kp LPAR,      RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  &kp RPAR,      RM3 RM4,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rpar,  &kp RPAR,      RM2 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrk,  &kp RBKT,      RT3 RT4,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrk,  &kp RBKT,      RT3 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(lt,  &kp LT,          RT1 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rt,  &kp GT,          RT2 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rt,  &kp GT,          RT4 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
 ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK, COMBO_TERM_SLOW)
@@ -111,22 +115,18 @@ ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK, COMBO_TERM_SLOW)
 
-/* horizontals for others */
-ZMK_COMBO(grave, &kp GRAVE,     LM4 LM3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(tilde, &kp TILDE,     LB4 LB3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(pipe,  &kp PIPE,      LB3 LB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(under, &kp UNDER,     LB1 LB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LB1 LB0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LM3,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      LM2 LB2,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM1 LB1,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM0 LB0,     COLEMAK, COMBO_TERM_SLOW)
 
-ZMK_COMBO(plus, &kp PLUS,       RB0 RB1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp EQUAL,     RB1 RB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(plus, &kp RS(SEMI),   RB2 RB3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp SEMI,      RB3 RB4,     COLEMAK, COMBO_TERM_SLOW)
-
-ZMK_COMBO(bslh,  &kp BSLH,      RM0 RB0,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(fslh,  &kp FSLH,      RM1 RB1,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       RM0 RB0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(colon, &kp RS(SEMI),   RM2 RB2,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(bslh,  &kp BSLH,      RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(scln_ent,  &kp RET, RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 / {
     behaviors {
 
@@ -279,7 +279,7 @@ label= "CMAK"                                                  ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &a_esc   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
-    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &slash_ret  &trans 
+    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &cm_colon  &dot_semi  &slash_ret  &trans 
                         &mt LALT LGUI   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
                         >;
                 };
