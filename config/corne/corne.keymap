@@ -115,7 +115,7 @@ ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK, COMBO_TERM_SLOW)
 
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LM3,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(pipe,  &kp PIPE,      LM2 LB2,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(under, &kp UNDER,     LM1 LB1,     COLEMAK, COMBO_TERM_SLOW)
@@ -127,6 +127,8 @@ ZMK_COMBO(colon, &kp RS(SEMI),   RM2 RB2,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(bslh,  &kp BSLH,      RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
+
 / {
     behaviors {
 
@@ -211,6 +213,13 @@ ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&scln_ret>;
         };
+        esc_alt_gui: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ESC>, <&mt LALT LGUI>;
+        };
     };
 
     macros {
@@ -278,9 +287,9 @@ label= "CMAK"                                                  ;
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &a_esc   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
-    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &cm_colon  &dot_semi  &slash_ret  &trans 
-                        &mt LALT LGUI   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
+    &trans &kp A   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
+    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
+                        &esc_alt_gui   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
                         >;
                 };
                 reaper_layer {
@@ -336,8 +345,8 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &trans &trans    &trans     &trans 
-   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp ESC                         &trans    &kp RSHFT  &kp RCTL    &kp RALT    &kp INSERT   &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
+   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp ESC                         &trans    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &kp RET    &trans 
                                   &trans &trans   &trans                           &trans    &trans    &trans  
                         >;
