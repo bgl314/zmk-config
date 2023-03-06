@@ -14,10 +14,11 @@
 
 #define COLEMAK   0
 #define REAPER 1
-#define NUMBERS  2
-#define SYMBOLS  3
-#define NAV  4
-#define ADJUST 5
+#define GAMES 2
+#define NUMBERS  3
+#define SYMBOLS  4
+#define NAV    5
+#define ADJUST 6
 
 #define QUICK_TAP_MS 175
 
@@ -56,9 +57,9 @@
 
 ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
     flavor = "balanced";
-    tapping-term-ms = <280>;
+    tapping-term-ms = <180>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <150>;        // requires PR #1387
+    global-quick-tap-ms = <120>;        // requires PR #1387
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
@@ -94,11 +95,12 @@ ZMK_BEHAVIOR(cm_colon, mod_morph,
 
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
+ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 /* Brackets (horizontal right hand) */
-ZMK_COMBO(lbrc,  &kp LBRC,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RM4 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  &kp LPAR,      RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  &kp RPAR,      RM2 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lbrc,  &kp LBRC,      RT1 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &kp RBRC,      RT4 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lpar,  &kp LPAR,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rpar,  &kp RPAR,      RT2 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(lbrk,  &kp LBKT,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(rbrk,  &kp RBKT,      RB3 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(lt,  &kp LT,          RB1 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
@@ -213,13 +215,7 @@ ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TER
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&scln_ret>;
         };
-        esc_alt_gui: tap_dance_9 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_9";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&mt LALT LGUI>;
-        };
+       
     };
 
     macros {
@@ -279,9 +275,10 @@ label= "CMAK"                                                  ;
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &kp A   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
     &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
-                        &esc_alt_gui   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
+                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
                         >;
                 };
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 reaper_layer {
 // ┌───────────────────────────────────────────────────────────┐
 label= "REAPER"                                                  ;
@@ -297,6 +294,20 @@ label= "REAPER"                                                  ;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
+                games_layer {
+// ┌───────────────────────────────────────────────────────────┐
+label= "GAMES"                                                  ;
+// └───────────────────────────────────────────────────────────┘
+
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+&trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
+&trans &kp A   &kp R    &kp S       &kp P    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
+&trans &kp Z   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
+                            &trans   &trans   &kp LCTRL                 &trans   &trans &trans    
+                        >;
+                };
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
                 number_layer {
 // ┌───────────────────────────────────────────────────────────┐
@@ -323,7 +334,7 @@ label= "!@#$%"                                                 ;
  &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
  &trans    &kp GRAVE   &hml LALT LBKT &hml LSHFT LBRC &hml LCTL LPRN  &kp LT  &kp GT &hmr RSHFT RPRN  &hmr RCTL RBRC  &hmr RALT RBKT  &scln_ent   &trans 
  &trans    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH                   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    &trans 
-                                  &trans &trans   &trans                            &trans    &trans    &trans  
+                                  &kp LGUI &trans   &trans                            &trans    &trans    &trans  
                         >;
                 };
 
@@ -338,7 +349,7 @@ label= "NAV"                                                 ;
    &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp ESC                         &trans    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &kp RET    &trans 
-                                  &trans &trans   &trans                           &trans    &trans    &trans  
+                                  &kp LGUI &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
                 };
 
@@ -349,9 +360,9 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &bt BT_PRV  &tog REAPER &trans 
+&trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &tog GAMES  &tog REAPER &trans 
 &trans &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_UP &kp C_VOL_DN   &kp C_MUTE &kp CAPS    &trans 
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &kp CAPS    &trans 
                                          &trans    &trans    &trans                &trans    &trans    &trans    
                         >;
                 };
