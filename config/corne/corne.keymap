@@ -255,16 +255,6 @@ ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TER
         };
     };
 
-     combos {
-            compatible = "zmk,combos";
-
-            combo_cw {
-                layers = <0> ;
-                timeout-ms = <200>;
-                key-positions = <16 19>;
-                bindings = <&caps_word>;
-            };
-    };
 
     
    
