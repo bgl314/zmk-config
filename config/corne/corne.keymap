@@ -122,7 +122,6 @@ ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(bslh,  &kp BSLH,      RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
-ZMK_COMBO(bksp_ret,  &kp RET, LH0 LB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
 / {
     behaviors {
 
@@ -194,7 +193,13 @@ ZMK_COMBO(bksp_ret,  &kp RET, LH0 LB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TE
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&scln_ret>;
         };
-       
+        z_ret: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Z>, <&kp RET>;
+        };
     };
 
     macros {
@@ -253,7 +258,7 @@ label= "CMAK"                                                  ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &kp A   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
-    &trans &kp Z     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
+    &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
                         &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
                         >;
                 };
