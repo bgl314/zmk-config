@@ -76,18 +76,10 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 )
 
 ZMK_BEHAVIOR(ss_cw, mod_morph,
-    bindings = <&sk LSHFT>, <&caps_word>;
+    bindings = <&sk RSHFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
 
-ZMK_BEHAVIOR(dot_semi, mod_morph,
-    bindings = <&kp DOT>, <&kp SEMI>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(cm_colon, mod_morph,
-    bindings = <&kp COMMA>, <&kp RS(SEMI)>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
@@ -130,7 +122,7 @@ ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(bslh,  &kp BSLH,      RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
-
+ZMK_COMBO(bksp_ret,  &kp RET, LH0 LB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
 / {
     behaviors {
 
@@ -157,20 +149,7 @@ ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TER
             tapping-term-ms = <200>;
             bindings = <&kp FSLH>, <&kp RET>;
         };
-        a_esc: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp A>, <&kp ESC>;
-        };
-        z_ent: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_3";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp Z>, <&kp ENTER>;
-        };
+        
         p_space: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_4";
@@ -274,7 +253,7 @@ label= "CMAK"                                                  ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &kp A   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
-    &trans &z_ent     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
+    &trans &kp Z     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
                         &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
                         >;
                 };
@@ -347,7 +326,7 @@ label= "NAV"                                                 ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
    &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
-   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp ESC                         &trans    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
+   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp CAPS                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &kp RET    &trans 
                                   &kp LGUI &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
@@ -362,7 +341,7 @@ label= "ADJUST"                                                ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &tog GAMES  &tog REAPER &trans 
 &trans &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &kp CAPS    &trans 
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
                                          &trans    &trans    &trans                &trans    &trans    &trans    
                         >;
                 };
