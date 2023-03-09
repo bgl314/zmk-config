@@ -79,7 +79,14 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
     bindings = <&sk RSHFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
-
+ZMK_BEHAVIOR(scln_dt, mod_morph,
+    bindings = <&kp DOT>, <&kp SEMI>;
+    mods = <(MOD_RSFT|MOD_LSFT)>;
+)
+ZMK_BEHAVIOR(cln_cm, mod_morph,
+    bindings = <&kp COMMA>, <&kp RS(SEMI)>;
+    mods = <(MOD_RSFT|MOD_LSFT)>;
+)
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
@@ -89,14 +96,14 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
 #define COMBO_TERM_SLOW 35
 ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 /* Brackets (horizontal right hand) */
-ZMK_COMBO(lbrc,  &kp LBRC,      RT1 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RT4 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  &kp LPAR,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  &kp RPAR,      RT2 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lbrk,  &kp LBKT,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrk,  &kp RBKT,      RB3 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lt,  &kp LT,          RB1 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rt,  &kp GT,          RB4 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lbrc,  &kp LBRC,      RB1 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &kp RBRC,      RB4 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lpar,  &kp LPAR,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rpar,  &kp RPAR,      RB2 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lbrk,  &kp LBKT,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrk,  &kp RBKT,      RT3 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lt,  &kp LT,          RT1 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rt,  &kp GT,          RT4 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
 ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK, COMBO_TERM_SLOW)
@@ -111,17 +118,22 @@ ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK, COMBO_TERM_SLOW)
 
 ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(pipe,  &kp PIPE,      LM2 LB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(under, &kp UNDER,     LM1 LB1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LM0 LB0,     COLEMAK, COMBO_TERM_SLOW)
 
-ZMK_COMBO(plus, &kp PLUS,       RM0 RB0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK, COMBO_TERM_SLOW)
+
 ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(colon, &kp RS(SEMI),   RM2 RB2,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(bslh,  &kp BSLH,      RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(scln_ent,  &scln_ret, RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp SQT, RM3 RT3,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
+ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(rh_symbols,  &mo ADJUST, RH0 RH1,    COLEMAK NAV, COMBO_TERM_FAST)
 / {
     behaviors {
 
@@ -236,8 +248,7 @@ ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TER
     };
 
 
-    
-   
+/*
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -245,7 +256,7 @@ ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TER
             then-layer = <ADJUST>;
         };
     };
-
+*/
         keymap {
                 compatible = "zmk,keymap";
 
@@ -257,9 +268,9 @@ label= "CMAK"                                                  ;
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &kp A   &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
-    &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
-                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS    
+    &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
+    &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &cln_cm  &scln_dt  &kp FSLH  &trans 
+                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -302,7 +313,7 @@ label= "12345"                                                 ;
  &trans   &kp KP_DIVIDE &kp N7 &kp N8 &kp N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
  &trans   &kp KP_MULTIPLY    &kp N4 &kp N5 &kp N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
  &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp SPACE            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
-                                  &kp KP_N0     &trans    &kp DEL                &kp KP_N0 &trans &trans  
+                                  &kp KP_N0  &trans &kp DEL          &kp KP_N0 &trans &trans  
                         >;
                 };
 
@@ -316,9 +327,9 @@ label= "!@#$%"                                                 ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
  &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
- &trans    &kp GRAVE   &hml LALT LBKT &hml LSHFT LBRC &hml LCTL LPRN  &kp LT  &kp GT &hmr RSHFT RPRN  &hmr RCTL RBRC  &hmr RALT RBKT  &scln_ent   &trans 
- &trans    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp BSLH                   &trans &kp PLUS  &kp EQUAL &kp RS(SEMI)    &kp FSLH    &trans 
-                                  &kp LGUI &trans   &trans                            &trans    &trans    &trans  
+ &trans    &kp GRAVE   &hml LALT LBKT &hml LSHFT LBRC &hml LCTL LPRN  &kp LT  &kp GT &hmr RSHFT RPRN  &hmr RCTL RBRC  &hmr RALT RBKT   &kp BSLH  &trans 
+ &trans    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp PLUS                  &trans  &kp EQUAL &kp RS(SEMI)  &scln_ent  &kp FSLH    &trans 
+                                   &trans   &trans   &trans                         &trans    &trans    &trans  
                         >;
                 };
 
@@ -333,7 +344,7 @@ label= "NAV"                                                 ;
    &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp CAPS                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &kp RET    &trans 
-                                  &kp LGUI &kp TAB   &trans                           &trans    &trans    &trans  
+                                  &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
                 };
 
