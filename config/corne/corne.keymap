@@ -96,50 +96,62 @@ ZMK_BEHAVIOR(cln_cm, mod_morph,
 #define COMBO_TERM_SLOW 35
 ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 /* Brackets (horizontal right hand) */
-ZMK_COMBO(lbrc,  &kp LBRC,      RB1 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RB4 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  &kp LPAR,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  &kp RPAR,      RB2 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lbrk,  &kp LBKT,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rbrk,  &kp RBKT,      RT3 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(lt,  &kp LT,          RT1 RT2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(rt,  &kp GT,          RT4 RT3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lbrc,  &kp LBRC,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &kp RBRC,      RM4 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lpar,  &kp LPAR,      RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rpar,  &kp RPAR,      RM2 RM3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lbrk,  &kp LBKT,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rbrk,  &kp RBKT,      RB3 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(lt,  &kp LT,          RB1 RB2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(rt,  &kp GT,          RB4 RB3,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
-ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK, COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(colon, &kp RS(SEMI),  RM2 RB2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(colon, &kp RS(SEMI),   RM2 RB2,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(semi, &kp SEMI,      RM3 RB3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(dquot,  &kp SQT, RM3 RT3,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV, COMBO_TERM_SLOW)
-ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK, COMBO_TERM_SLOW)
-ZMK_COMBO(rh_symbols,  &mo ADJUST, RH0 RH1,    COLEMAK NAV, COMBO_TERM_FAST)
+ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK REAPER GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV REAPER GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK REAPER GAMES, COMBO_TERM_FAST)
+
 / {
     behaviors {
 
         hhm: hold_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <150>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hmm: hold_macro_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "hold_macro_mods";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <150>;
@@ -170,18 +182,21 @@ ZMK_COMBO(rh_symbols,  &mo ADJUST, RH0 RH1,    COLEMAK NAV, COMBO_TERM_FAST)
         };
         s_alt_s: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_5";
+            label = "tap_dance_5";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp S>, <&s_alt_s_macro>;
         };
-        d_delete: tap_dance_6 {
+        
+        t_take_t: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_6";
+            label = "tap_dance_6";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp D>, <&kp DEL>;
+            bindings = <&kp T>, <&t_take_macro>;
         };
+       
+         
         dot_ent: tap_dance_7 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_7";
@@ -222,8 +237,8 @@ ZMK_COMBO(rh_symbols,  &mo ADJUST, RH0 RH1,    COLEMAK NAV, COMBO_TERM_FAST)
             bindings
                 = <&macro_tap &kp SEMI &kp RET>;
         };
-        t_take: t_take {
-            label = "ZM_t_take";
+        t_take_macro: t_take_macro {
+            label = "ZM_t_take_macro";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -270,21 +285,21 @@ label= "CMAK"                                                  ;
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &cln_cm  &scln_dt  &kp FSLH  &trans 
-                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &ss_cw &mo SYMBOLS
+                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 reaper_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "REAPER"                                                  ;
+label= "REAPR"                                                  ;
 // └───────────────────────────────────────────────────────────┘
 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &trans   &trans   &trans    &p_space    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
-&trans &trans   &trans  &s_alt_s  &t_take &d_delete                      &trans    &trans     &trans     &trans     &trans &trans 
-&trans &trans   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
-                            &trans   &trans   &trans                      &trans   &trans &trans    
+&trans &trans   &trans  &trans    &p_space   &trans                         &trans     &trans     &trans     &trans     &trans &trans 
+&trans &trans   &trans  &s_alt_s  &t_take_t  &trans                         &trans    &trans     &trans     &trans     &trans &trans 
+&trans &trans   &trans  &trans    &trans     &trans                         &trans     &trans     &trans &trans   &trans &trans 
+                            &trans   &trans   &trans                        &trans   &trans &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -341,9 +356,9 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &trans    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
-   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp CAPS                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
-   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &trans    &trans    &trans    &trans    &kp RET    &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
+   &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp DEL                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
+   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp DEL                     &kp CAPS    &trans    &trans    &trans    &kp RET    &trans 
                                   &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
                 };
