@@ -102,7 +102,7 @@ ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 ZMK_COMBO(dcbr,  &dbl_cbr,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(dlt,  &dbl_ltgt,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+//ZMK_COMBO(dlt,  &dbl_ltgt,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
 ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
@@ -357,7 +357,7 @@ label= "GAMES"                                                  ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
-&trans &kp A   &kp R    &kp S       &kp P    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
+&trans &kp A   &kp R    &kp S       &kp T    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
 &trans &kp Z   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
                             &kp TAB   &mo GAMES_ALT   &kp SPACE                 &trans   &trans &trans    
                         >;
