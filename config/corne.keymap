@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/mouse.h>
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"  
 
@@ -132,7 +133,7 @@ ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK REAPER GAMES, COMBO_TERM_SL
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK REAPER GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK REAPER GAMES NAV, COMBO_TERM_FAST)
 ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV REAPER GAMES, COMBO_TERM_FAST)
 ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK REAPER GAMES, COMBO_TERM_FAST)
 
@@ -333,6 +334,7 @@ label= "CMAK"                                                  ;
                         &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
                 };
+
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 reaper_layer {
 // ┌───────────────────────────────────────────────────────────┐
@@ -359,7 +361,7 @@ label= "GAMES"                                                  ;
 &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
 &trans &kp A   &kp R    &kp S       &kp T    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
 &trans &kp Z   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
-                            &kp TAB   &mo GAMES_ALT   &kp SPACE                 &trans   &trans &trans    
+                           &kp TAB &mo GAMES_ALT    &kp SPACE                 &trans   &trans &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -428,11 +430,12 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT &tog GAMES  &tog REAPER &trans 
-&trans &kp F5      &kp F6   &kp F7   &kp F8     &trans                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &trans                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
-                                         &trans    &trans    &trans                &trans    &trans    &trans    
+&trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &tog REAPER &tog GAMES &trans 
+&trans &kp F5      &kp F6   &kp F7   &kp F8     &kp LCLK                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
+                                         &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans    
                         >;
                 };
+
         };
 };
