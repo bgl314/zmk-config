@@ -12,8 +12,6 @@
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"  
 
-#include "../private/passwords.h"
-
 
 #define COLEMAK   0
 #define GAMES 1
@@ -419,7 +417,7 @@ label= "ADJUST"                                                ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &tog REAPER &tog GAMES &trans 
 &trans &kp F5      &kp F6   &kp F7   &kp F8     &kp LCLK                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &mo PWD    &trans 
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
                                          &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans    
                         >;
                 };
