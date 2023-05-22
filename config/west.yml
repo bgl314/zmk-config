@@ -2,12 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-      name: infused-kim
-      url-base: https://github.com/infused-kim
+      name: bgl314
+      url-base: https://github.com/bgl314
   projects:
     - name: zmk
-      remote: infused-kim
-      revision: pr-testing/mouse_ps2
+      remote: bgl314
+      revision: main
       import: app/west.yml
   self:
     path: config
