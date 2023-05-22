@@ -14,13 +14,12 @@
 
 
 #define COLEMAK   0
-#define REAPER 1
-#define GAMES 2
-#define GAMES_ALT 3
-#define NUMBERS  4
-#define SYMBOLS  5 
-#define NAV    6
-#define ADJUST 7
+#define GAMES 1
+#define GAMES_ALT 2
+#define NUMBERS  3
+#define SYMBOLS  4 
+#define NAV    5
+#define ADJUST 6
 
 #define QUICK_TAP_MS 175
 
@@ -106,36 +105,36 @@ ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 //ZMK_COMBO(dlt,  &dbl_ltgt,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
-ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(lt, &kp RS(SEMI),           RM2 RB2,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(lt, &kp RS(SEMI),           RM2 RB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK REAPER GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK REAPER GAMES NAV, COMBO_TERM_FAST)
-ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV REAPER GAMES, COMBO_TERM_FAST)
-ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK REAPER GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES NAV, COMBO_TERM_FAST)
+ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV  GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
 
 / {
     behaviors {
@@ -336,20 +335,7 @@ label= "CMAK"                                                  ;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-                reaper_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "REAPR"                                                  ;
-// └───────────────────────────────────────────────────────────┘
-
- bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &trans   &trans  &trans    &p_space   &trans                         &trans     &trans     &trans     &trans     &trans &trans 
-&trans &trans   &hhm LALT R  &htms LCTL 0  &hmtake LSHFT 0  &trans                         &trans    &trans     &trans     &trans     &trans &trans 
-&trans &trans   &trans  &trans    &trans     &trans                         &trans     &trans     &trans &trans   &trans &trans 
-                            &trans   &trans   &trans                        &trans   &trans &trans    
-                        >;
-                };
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+               
 
                 games_layer {
 // ┌───────────────────────────────────────────────────────────┐
@@ -430,7 +416,7 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &tog REAPER &tog GAMES &trans 
+&trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &trans &tog GAMES &trans 
 &trans &kp F5      &kp F6   &kp F7   &kp F8     &kp LCLK                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
 &trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
                                          &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans    
