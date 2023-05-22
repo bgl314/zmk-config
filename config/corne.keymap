@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"  
+#include "../private/passwords.h"
 
 
 #define COLEMAK   0
@@ -20,6 +21,7 @@
 #define SYMBOLS  4 
 #define NAV    5
 #define ADJUST 6
+#define PWD 7
 
 #define QUICK_TAP_MS 175
 
@@ -373,8 +375,8 @@ label= "12345"                                                 ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
  &trans   &kp KP_DIVIDE &kp N7 &kp N8 &kp N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
  &trans   &kp KP_MULTIPLY    &kp N4 &kp N5 &kp N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
- &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp SPACE            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
-                                  &kp KP_N0  &trans &kp DEL          &kp KP_N0 &trans &trans  
+ &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp KP_N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
+                                  &kp SPC  &trans &kp DEL          &kp KP_N0 &trans &trans  
                         >;
                 };
 
@@ -418,10 +420,22 @@ label= "ADJUST"                                                ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &trans &tog GAMES &trans 
 &trans &kp F5      &kp F6   &kp F7   &kp F8     &kp LCLK                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &trans    &trans 
+&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &mo PWD    &trans 
                                          &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans    
                         >;
                 };
-
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                pwd_layer {
+// ┌───────────────────────────────────────────────────────────┐
+label= "PWD"                                                ;
+// └───────────────────────────────────────────────────────────┘
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+&trans &trans   &trans   &trans  &trans     &pwd_g                     &trans     &pwd_l     &trans     &trans     &trans &trans 
+&trans   &trans   &pwd_s   &trans   &pwd_d    &trans                        &trans    &pwd_n     &trans     &trans     &trans &trans 
+&trans   &trans   &trans   &trans   &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
+                            &trans   &trans   &trans                 &trans   &trans &trans                         
+                            >;
+                };
         };
 };
