@@ -14,12 +14,13 @@
 
 
 #define COLEMAK   0
-#define GAMES 1
-#define GAMES_ALT 2
-#define NUMBERS  3
-#define SYMBOLS  4 
-#define NAV    5
-#define ADJUST 6
+#define REAPER 1
+#define GAMES 2
+#define GAMES_ALT 3
+#define NUMBERS  4
+#define SYMBOLS  5 
+#define NAV    6
+#define ADJUST 7
 
 #define QUICK_TAP_MS 175
 
@@ -335,6 +336,20 @@ label= "CMAK"                                                  ;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                reaper_layer {
+// ┌───────────────────────────────────────────────────────────┐
+label= "REAPR"                                                  ;
+// └───────────────────────────────────────────────────────────┘
+
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+&trans &trans   &trans  &trans    &p_space   &trans                         &trans     &trans     &trans     &trans     &trans &trans 
+&trans &trans   &hhm LALT R  &htms LCTL 0  &hmtake LSHFT 0  &trans                         &trans    &trans     &trans     &trans     &trans &trans 
+&trans &trans   &trans  &trans    &trans     &trans                         &trans     &trans     &trans &trans   &trans &trans 
+                            &trans   &trans   &trans                        &trans   &trans &trans    
+                        >;
+                };
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
                 games_layer {
 // ┌───────────────────────────────────────────────────────────┐
@@ -423,5 +438,4 @@ label= "ADJUST"                                                ;
                 };
 
         };
-    
 };
