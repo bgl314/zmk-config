@@ -432,7 +432,7 @@ label= "PWD"                                                ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &trans   &trans   &trans  &trans     &pwd_g                     &trans     &pwd_l     &trans     &trans     &trans &trans 
-&trans   &trans   &pwd_s   &trans   &pwd_d    &trans                        &trans    &pwd_n     &trans     &trans     &trans &trans 
+&trans   &trans &trans   &pwd_s   &trans   &pwd_d                            &trans    &pwd_n     &trans     &trans     &trans &trans 
 &trans   &trans   &trans   &trans   &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
                             &trans   &trans   &trans                 &trans   &trans &trans                         
                             >;
