@@ -104,7 +104,7 @@ ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 ZMK_COMBO(dcbr,  &dbl_cbr,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
-//ZMK_COMBO(dlt,  &dbl_ltgt,      RM1 RM2,     COLEMAK NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(dlt,  &dbl_ltgt,      RB2 RB3,     COLEMAK, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
 ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
@@ -130,7 +130,7 @@ ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
 ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+//ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
@@ -214,6 +214,9 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
             tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp ENTER>;
         };
+
+       
+
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -223,6 +226,7 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
+        /*
         scln_ent: tap_dance_8 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_8";
@@ -230,6 +234,7 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&scln_ret>;
         };
+        */
         z_ret: tap_dance_9 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_9";
@@ -237,9 +242,39 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
             tapping-term-ms = <200>;
             bindings = <&kp Z>, <&kp RET>;
         };
+
+        td_paren: tap_dance_10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_10";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+        td_cbr: tap_dance_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_11";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+        };
+        td_bkt: tap_dance_12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_12";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+        };
+        td_ltgt: tap_dance_13 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_13";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LT>, <&kp GT>;
+        };
     };
 
     macros {
+        /*
         scln_ret: scln_ret {
             label = "ZM_scln_ret";
             compatible = "zmk,behavior-macro";
@@ -247,6 +282,7 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
             bindings
                 = <&macro_tap &kp SEMI &kp RET>;
         };
+        */
         t_take_macro: t_take_macro {
             label = "ZM_t_take_macro";
             compatible = "zmk,behavior-macro";
@@ -307,6 +343,7 @@ ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
                 <&macro_tap &kp LT &kp GT &kp LEFT>
                 ;
         };
+        
     };
 
 
@@ -332,7 +369,7 @@ label= "CMAK"                                                  ;
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
-                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
+                        &hhm LGUI ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
                 };
 
@@ -349,7 +386,7 @@ label= "GAMES"                                                  ;
 &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
 &trans &kp A   &kp R    &kp S       &kp T    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
 &trans &kp Z   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
-                           &kp TAB &mo GAMES_ALT    &kp SPACE                 &trans   &trans &trans    
+                          &mo GAMES_ALT &kp TAB     &kp SPACE                 &trans   &trans &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -375,7 +412,7 @@ label= "12345"                                                 ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
  &trans   &kp KP_DIVIDE &kp N7 &kp N8 &kp N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
  &trans   &kp KP_MULTIPLY    &kp N4 &kp N5 &kp N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
- &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp KP_N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
+ &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
                                   &kp SPC  &trans &kp DEL          &kp KP_N0 &trans &trans  
                         >;
                 };
@@ -389,10 +426,10 @@ label= "!@#$%"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
- &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
- &trans    &kp GRAVE   &hml LALT LBKT &hml LSHFT LBRC &hml LCTL LPRN  &kp LT  &kp GT &hmr RSHFT RPRN  &hmr RCTL RBRC  &hmr RALT RBKT   &kp BSLH  &trans 
- &trans    &kp TILDE  &kp PIPE &kp UNDER  &kp MINUS  &kp PLUS                  &trans  &kp EQUAL &kp RS(SEMI)  &scln_ent  &kp FSLH    &trans 
-                                   &trans   &trans   &trans                         &trans    &trans    &trans  
+ &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
+ &trans    &kp TILDE   &kp GRAVE &kp PIPE &kp PLUS  &kp EQUAL                   &kp LT &kp LPRN  &kp LBRC  &kp LBKT   &kp GT  &trans 
+ &trans    &kp BSLH  &trans &kp UNDER  &kp MINUS  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp BSLH    &trans 
+                                   &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans  
                         >;
                 };
 
@@ -404,9 +441,9 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &trans    &trans     &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &trans    &kp BSLH     &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp DEL                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
-   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &trans                     &kp CAPS    &trans    &trans    &trans    &kp RET    &trans 
+   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp SPACE                     &kp CAPS    &td_paren    &td_cbr    &td_bkt    &td_ltgt    &trans 
                                   &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
                 };
@@ -418,10 +455,10 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp F9      &kp F10   &kp F11   &kp F12    &kp MCLK                   &ext_power EP_TOG    &bt BT_CLR &bt BT_NXT  &trans &tog GAMES &trans 
-&trans &kp F5      &kp F6   &kp F7   &kp F8     &kp LCLK                      &trans    &hmr RSHFT C_PLAY &hmr RCTL C_STOP &hmr RALT C_PREV  &hmr RGUI C_NEXT  &trans  
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp RCLK                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &mo PWD    &trans 
-                                         &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans    
+&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_CLR  &bt BT_SEL 0 &bt BT_NXT  &trans    &tog GAMES &trans 
+&trans &kp C_PLAY  &kp F4 &kp F5    &kp F6        &kp F11                      &trans    &kp RSHFT &kp RCTL  &kp RALT   &kp RGUI   &trans  
+&trans &kp C_STOP &kp F1    &kp F2   &kp F3       &kp F12                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &mo PWD    &trans 
+                                         &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -432,7 +469,7 @@ label= "PWD"                                                ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &trans   &trans   &trans  &trans     &pwd_g                     &trans     &pwd_l     &trans     &trans     &trans &trans 
-&trans   &trans &trans   &pwd_s   &trans   &pwd_d                            &trans    &pwd_n     &trans     &trans     &trans &trans 
+&trans   &trans   &trans &pwd_s     &trans  &pwd_d                      &trans    &pwd_n     &trans     &trans     &trans &trans 
 &trans   &trans   &trans   &trans   &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
                             &trans   &trans   &trans                 &trans   &trans &trans                         
                             >;
