@@ -60,9 +60,9 @@
 
 ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
     flavor = "balanced";
-    tapping-term-ms = <180>;
+    tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <120>;        // requires PR #1387
+    global-quick-tap-ms = <150>;        // requires PR #1387
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
@@ -137,6 +137,7 @@ ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES NAV, COMBO_TERM_FAST)
 ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV  GAMES, COMBO_TERM_FAST)
 ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
+ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
 
 / {
     behaviors {
@@ -369,7 +370,7 @@ label= "CMAK"                                                  ;
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
     &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
-                        &hhm LGUI ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
+                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
                 };
 
@@ -455,9 +456,9 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_CLR  &bt BT_SEL 0 &bt BT_NXT  &trans    &tog GAMES &trans 
-&trans &kp C_PLAY  &kp F4 &kp F5    &kp F6        &kp F11                      &trans    &kp RSHFT &kp RCTL  &kp RALT   &kp RGUI   &trans  
-&trans &kp C_STOP &kp F1    &kp F2   &kp F3       &kp F12                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &mo PWD    &trans 
+&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &trans  &bt BT_SEL 0 &bt BT_PRV  &bt BT_NXT   &tog GAMES &trans 
+&trans &kp C_PLAY  &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &kp RSHFT &kp RCTL  &kp RALT   &kp RGUI   &trans  
+&trans &kp C_STOP &kp F1    &kp F2   &kp F3       &kp F12                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &sl PWD    &trans 
                                          &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
                         >;
                 };
