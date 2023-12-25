@@ -58,11 +58,11 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
-ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
+ZMK_BEHAVIOR(hml, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <150>;        // requires PR #1387
+    //global-quick-tap-ms = <150>;        // requires PR #1387
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
@@ -72,7 +72,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    global-quick-tap-ms = <150>;        // requires PR #1387
+    //global-quick-tap-ms = <150>;        // requires PR #1387
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
@@ -94,8 +94,8 @@ ZMK_BEHAVIOR(cln_cm, mod_morph,
 */
 
 // use global-quick-tap-ms for combos (requires PR 1387)
-#undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <75>;
+//#undef COMBO_HOOK
+//#define COMBO_HOOK global-quick-tap-ms = <75>;
 
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
