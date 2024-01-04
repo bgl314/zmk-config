@@ -106,7 +106,7 @@ ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dlt,  &dbl_ltgt,      RB2 RB3,     COLEMAK, COMBO_TERM_FAST)
 
-/* Other symbols (vertical combos) */
+/* Other symbols (vertical combos) 
 ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
@@ -125,15 +125,17 @@ ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
 ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+*/
 ZMK_COMBO(lt, &kp RS(SEMI),           RM2 RB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+
 
 ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 //ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
+//ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES NAV, COMBO_TERM_FAST)
 ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV  GAMES, COMBO_TERM_FAST)
 ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
@@ -363,12 +365,12 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 colemak_layer {
 // ┌───────────────────────────────────────────────────────────┐
 label= "CMAK"                                                  ;
-// └───────────────────────────────────────────────────────────┘                                                 ;
+// └───────────────────────────────────────────────────────────┘                                                
 
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
+    &trans &kp A   &hml LALT R &hml LCTL S &hml LSHFT T &kp D          &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
                         &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
@@ -411,9 +413,9 @@ label= "12345"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
- &trans   &kp KP_DIVIDE &kp N7 &kp N8 &kp N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
- &trans   &kp KP_MULTIPLY    &kp N4 &kp N5 &kp N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
- &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
+ &trans    &td_ltgt  &td_bkt  &td_cbr  &td_paren &trans      &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
+ &trans   &kp TILDE   &kp GRAVE &kp UNDER &kp MINUS  &kp PLUS     &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
+ &trans  &kp BSLH  &trans &kp PIPE  &kp EQUAL  &trans             &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
                                   &kp SPC  &trans &kp DEL          &kp KP_N0 &trans &trans  
                         >;
                 };
@@ -427,9 +429,9 @@ label= "!@#$%"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
- &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
- &trans    &kp TILDE   &kp GRAVE &kp PIPE &kp PLUS  &kp EQUAL                   &kp LT &kp LPRN  &kp LBRC  &kp LBKT   &kp GT  &trans 
- &trans    &kp BSLH  &trans &kp UNDER  &kp MINUS  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp BSLH    &trans 
+ &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                 &trans  &kp CARET &kp AMPS  &kp STAR   &trans  &trans
+ &trans    &kp TILDE   &kp GRAVE &kp UNDER &kp MINUS  &kp PLUS               &trans  &kp LPRN  &kp LBRC  &kp LBKT   &kp GT  &trans 
+ &trans    &kp BSLH  &trans &kp PIPE  &kp EQUAL  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp LT    &trans 
                                    &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans  
                         >;
                 };
