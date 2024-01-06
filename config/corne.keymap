@@ -99,7 +99,7 @@ ZMK_BEHAVIOR(cln_cm, mod_morph,
 
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
-ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
+//ZMK_COMBO(lgui,  &kp LGUI,      LH2 LH1,     COLEMAK, COMBO_TERM_FAST)
 /* Brackets (horizontal right hand) */
 ZMK_COMBO(dcbr,  &dbl_cbr,      RT0 RT1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
@@ -113,9 +113,9 @@ ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
-ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(caret, &kp CARET,     RT1 RM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,      RT2 RM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(star,  &kp STAR,      RT3 RM3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
 ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
@@ -368,7 +368,7 @@ label= "CMAK"                                                  ;
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &hml LGUI A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
+    &trans &kp A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &hmr RGUI O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
                         &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
                         >;
@@ -427,9 +427,9 @@ label= "!@#$%"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
- &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &kp CARET &kp AMPS  &kp STAR  &kp LPAR    &kp RPAR      &trans 
- &trans    &kp TILDE   &kp GRAVE &kp PIPE &kp PLUS  &kp EQUAL                   &kp LT &kp LPRN  &kp LBRC  &kp LBKT   &kp GT  &trans 
- &trans    &kp BSLH  &trans &kp UNDER  &kp MINUS  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp BSLH    &trans 
+ &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &trans &kp CARET &kp AMPS  &kp STAR  &trans   &trans 
+ &trans    &kp TILDE   &kp GRAVE &kp PIPE &kp PLUS  &kp EQUAL                   &trans &kp LPRN  &kp LBRC  &kp LBKT   &kp LT  &trans 
+ &trans    &kp BSLH  &trans &kp UNDER  &kp MINUS  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp GT    &trans 
                                    &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans  
                         >;
                 };
