@@ -144,7 +144,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
 
         hhm: hold_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_HOMEROW_MODS";
+            
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <150>;
@@ -154,14 +154,14 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         
         TAB_NUMBERS: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo NUMBERS>, <&kp TAB>;
         };
         slash_ret: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FSLH>, <&kp RET>;
@@ -169,14 +169,14 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         
         p_space: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_4";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp P>, <&kp SPACE>;
         };
         s_alt_s: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
-            label = "tap_dance_5";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp S>, <&s_alt_s_macro>;
@@ -184,14 +184,14 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         
         t_take_t: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
-            label = "tap_dance_6";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp T>, <&t_take_macro>;
         };
         hmtake: hold_macro_mods1 {
             compatible = "zmk,behavior-hold-tap";
-            label = "hold_macro_mods1";
+            
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <150>;
@@ -200,7 +200,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         };
         htms: hold_macro_mods2 {
             compatible = "zmk,behavior-hold-tap";
-            label = "hold_macro_mods2";
+            
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <150>;
@@ -210,7 +210,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
          
         dot_ent: tap_dance_7 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_7";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp ENTER>;
@@ -220,7 +220,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
 
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -230,7 +230,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         /*
         scln_ent: tap_dance_8 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_8";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&scln_ret>;
@@ -238,7 +238,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         */
         z_ret: tap_dance_9 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_9";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Z>, <&kp RET>;
@@ -246,28 +246,28 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
 
         td_paren: tap_dance_10 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_10";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
         td_cbr: tap_dance_11 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_11";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LBRC>, <&kp RBRC>;
         };
         td_bkt: tap_dance_12 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_12";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LBKT>, <&kp RBKT>;
         };
         td_ltgt: tap_dance_13 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_13";
+            
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LT>, <&kp GT>;
@@ -277,7 +277,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
     macros {
         /*
         scln_ret: scln_ret {
-            label = "ZM_scln_ret";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -285,7 +285,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
         };
         */
         t_take_macro: t_take_macro {
-            label = "ZM_t_take_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -297,7 +297,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 ;
         };
         s_alt_s_macro: s_alt_s_macro {
-            label = "ZM_s_alt_s_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -308,7 +308,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 ;
         };
         dbl_paren: dbl_paren {
-            label = "ZM_dbl_paren_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -317,7 +317,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 ;
         };
         dbl_cbr: dbl_cbr {
-            label = "ZM_dbl_cbr_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -326,7 +326,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 ;
         };
         dbl_bkt: dbl_bkt {
-            label = "ZM_dbl_bkt_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -336,7 +336,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
                 ;
         };
         dbl_ltgt: dbl_ltgt {
-            label = "ZM_dbl_ltgt_macro";
+            
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -362,7 +362,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
 
                 colemak_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "CMAK"                                                  ;
+
 // └───────────────────────────────────────────────────────────┘                                                 ;
 
    bindings = <
@@ -379,7 +379,7 @@ label= "CMAK"                                                  ;
 
                 games_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "GAMES"                                                  ;
+
 // └───────────────────────────────────────────────────────────┘
 
  bindings = <
@@ -393,7 +393,7 @@ label= "GAMES"                                                  ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 games_alt_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "GM_ALT"                                                  ;
+
 // └───────────────────────────────────────────────────────────┘
 
  bindings = <
@@ -407,7 +407,7 @@ label= "GM_ALT"                                                  ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 number_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "12345"                                                 ;
+
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -423,7 +423,7 @@ label= "12345"                                                 ;
 
                 symbol_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "!@#$%"                                                 ;
+
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -438,7 +438,7 @@ label= "!@#$%"                                                 ;
 
                 nav_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "NAV"                                                 ;
+
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -452,7 +452,7 @@ label= "NAV"                                                 ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 adjust_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "ADJUST"                                                ;
+
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -465,7 +465,7 @@ label= "ADJUST"                                                ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                 pwd_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "PWD"                                                ;
+
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
