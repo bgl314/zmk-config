@@ -442,9 +442,9 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &trans    &kp BSLH     &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &trans     &td_ltgt    &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp DEL                         &caps_word    &kp RSHFT  &kp RCTL    &kp RALT    &kp ESC   &trans 
-   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp SPACE                     &kp CAPS    &td_paren    &td_cbr    &td_bkt    &td_ltgt    &trans 
+   &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp SPACE                     &kp CAPS    &td_paren    &td_cbr    &td_bkt    &kp BSLH   &trans 
                                   &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
                         >;
                 };
