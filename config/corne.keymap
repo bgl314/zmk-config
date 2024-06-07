@@ -82,16 +82,6 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
     bindings = <&sk RSHFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
-/*
-ZMK_BEHAVIOR(scln_dt, mod_morph,
-    bindings = <&kp DOT>, <&kp LT>;
-    mods = <(MOD_RSFT|MOD_LSFT)>;
-)
-ZMK_BEHAVIOR(cln_cm, mod_morph,
-    bindings = <&kp COMMA>, <&kp GT>;
-    mods = <(MOD_RSFT|MOD_LSFT)>;
-)
-*/
 
 // use global-quick-tap-ms for combos (requires PR 1387)
 //#undef COMBO_HOOK
@@ -125,13 +115,12 @@ ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
 ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(lt, &kp RS(SEMI),           RM2 RB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(lt, &kp RS(SEMI),     RM2 RB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 
 ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
 //ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret,  &kp RET, RH0 RB4,     COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES NAV, COMBO_TERM_FAST)
@@ -159,64 +148,8 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
             tapping-term-ms = <200>;
             bindings = <&mo NUMBERS>, <&kp TAB>;
         };
-        slash_ret: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp FSLH>, <&kp RET>;
-        };
         
-        p_space: tap_dance_4 {
-            compatible = "zmk,behavior-tap-dance";
-            
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp SPACE>;
-        };
-        s_alt_s: tap_dance_5 {
-            compatible = "zmk,behavior-tap-dance";
-            
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp S>, <&s_alt_s_macro>;
-        };
         
-        t_take_t: tap_dance_6 {
-            compatible = "zmk,behavior-tap-dance";
-            
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp T>, <&t_take_macro>;
-        };
-        hmtake: hold_macro_mods1 {
-            compatible = "zmk,behavior-hold-tap";
-            
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <150>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&t_take_t>;
-        };
-        htms: hold_macro_mods2 {
-            compatible = "zmk,behavior-hold-tap";
-            
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <150>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&s_alt_s>;
-        };
-         
-        dot_ent: tap_dance_7 {
-            compatible = "zmk,behavior-tap-dance";
-            
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp ENTER>;
-        };
-
-       
 
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -275,38 +208,7 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
     };
 
     macros {
-        /*
-        scln_ret: scln_ret {
-            
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp SEMI &kp RET>;
-        };
-        */
-        t_take_macro: t_take_macro {
-            
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>,
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp T>,
-                <&macro_release &kp LALT>,
-                <&macro_release &kp LSHFT>
-                ;
-        };
-        s_alt_s_macro: s_alt_s_macro {
-            
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = 
-                <&macro_press &kp LALT>,
-                <&macro_tap &kp S>,
-                <&macro_release &kp LALT>
-                ;
-        };
+        
         dbl_paren: dbl_paren {
             
             compatible = "zmk,behavior-macro";
@@ -413,7 +315,7 @@ label= "12345"                                                 ;
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
  &trans   &kp KP_DIVIDE &kp N7 &kp N8 &kp N9  &kp KP_MINUS       &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_DIVIDE &trans 
  &trans   &kp KP_MULTIPLY    &kp N4 &kp N5 &kp N6 &kp KP_PLUS    &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans 
- &trans   &dot_ent   &kp N1 &kp N2 &kp N3 &kp N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &dot_ent &trans 
+ &trans   &pk DOT   &kp N1 &kp N2 &kp N3 &kp N0            &kp KP_EQUAL  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp DOT &trans 
                                   &kp SPC  &trans &kp DEL          &kp KP_N0 &trans &trans  
                         >;
                 };
