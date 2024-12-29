@@ -18,12 +18,13 @@
 
 #define COLEMAK   0
 #define GAMES 1
+#define G_QWERTY 2
 #define GAMES_ALT 2
-#define NUMBERS  3
-#define SYMBOLS  4 
-#define NAV    5
-#define ADJUST 6
-#define PWD 7
+#define NUMBERS  4
+#define SYMBOLS  5 
+#define NAV   6
+#define ADJUST 7
+#define PWD 8
 
 #define QUICK_TAP_MS 175
 
@@ -99,36 +100,39 @@ ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK NUMBERS, COMBO_TERM_FAST)
 ZMK_COMBO(dlt,  &dbl_ltgt,      RB2 RB3,     COLEMAK, COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
-ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK  , COMBO_TERM_SLOW)
 
-ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK  , COMBO_TERM_SLOW)
 
-ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK  , COMBO_TERM_SLOW)
 
-ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(lt, &kp RS(SEMI),     RM2 RB2,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(lt, &kp RS(SEMI),     RM2 RB2,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK  , COMBO_TERM_SLOW)
 
-ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
-//ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK  , COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK  , COMBO_TERM_SLOW)
+//ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK  , COMBO_TERM_SLOW)
 ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES NAV, COMBO_TERM_FAST)
-ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV  GAMES, COMBO_TERM_FAST)
-ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  GAMES, COMBO_TERM_FAST)
-ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
+ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK  GAMES G_QWERTY, COMBO_TERM_SLOW)
+ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK  GAMES G_QWERTY NAV, COMBO_TERM_FAST)
+ZMK_COMBO(games_num,  &mo NUMBERS, LH0 LH1,    GAMES G_QWERTY, COMBO_TERM_FAST)
+ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK NAV  GAMES G_QWERTY, COMBO_TERM_FAST)
+ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK  , COMBO_TERM_FAST)
+ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT1 RT2,    ADJUST, COMBO_TERM_FAST)
+ZMK_COMBO(panic_colemak,  &to COLEMAK, RT3 RT4,    ADJUST, COMBO_TERM_FAST)
+
 
 / {
     behaviors {
@@ -252,15 +256,6 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT4,    ADJUST, COMBO_TERM_FAST)
     };
 
 
-/*
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <NUMBERS SYMBOLS>;
-            then-layer = <ADJUST>;
-        };
-    };
-*/
         keymap {
                 compatible = "zmk,keymap";
 
@@ -295,6 +290,22 @@ label= "GAMES"                                                  ;
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+games_qwerty_layer {
+// ┌───────────────────────────────────────────────────────────┐
+label= "G_QWE"                                                  ;
+// └───────────────────────────────────────────────────────────┘
+
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+&trans &kp Q   &kp W   &kp E    &kp R    &kp T                    &kp Y     &kp U     &kp I     &kp O     &kp P &trans 
+&trans &kp A   &kp S   &kp D    &kp F    &kp G                      &kp H &hmr RSHFT J &hmr RCTL K  &hmr RALT L  &hmr RGUI SEMI &trans 
+&trans &kp Z   &kp X  &kp C     &kp V     &kp B                     &kp N     &kp M     &kp COMMA &kp FSLH   &kp FSLH &trans 
+                          &mo GAMES_ALT &kp TAB     &kp SPACE                 &trans   &trans &trans    
+                        >;
+                };
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
                 games_alt_layer {
 // ┌───────────────────────────────────────────────────────────┐
 label= "GM_ALT"                                                  ;
@@ -302,9 +313,9 @@ label= "GM_ALT"                                                  ;
 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp F9      &kp F10   &kp F11   &kp F12     &trans                     &trans     &trans     &trans     &trans     &trans &trans 
-&trans &kp F5      &kp F6   &kp F7   &kp F8     &kp BKSP                        &trans    &trans     &trans     &trans     &trans &trans 
-&trans &kp F1    &kp F2   &kp F3   &kp F4     &kp ESC                     &trans     &trans     &trans &trans   &trans &trans 
+&trans &kp ESC      &kp F7   &kp F8   &kp F9     &kp F10                     &trans     &trans     &trans     &trans     &trans &trans 
+&trans &kp BKSP      &kp F4   &kp F5   &kp F6     &kp F11                        &trans    &trans     &trans     &trans     &trans &trans 
+&trans &kp DEL    &kp F1   &kp F2   &kp F3     &kp F12                     &trans     &trans     &trans &trans   &trans &trans 
                             &trans   &trans   &trans                 &trans   &trans &trans    
                         >;
                 };
@@ -360,7 +371,7 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &trans  &bt BT_SEL 0 &bt BT_PRV  &bt BT_NXT   &tog GAMES &trans 
+&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_PRV  &bt BT_SEL 0 &bt BT_NXT  &tog G_QWERTY   &tog GAMES &trans 
 &trans &kp C_PLAY  &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &kp RSHFT &kp RCTL  &kp RALT   &kp RGUI   &trans  
 &trans &kp C_STOP &kp F1    &kp F2   &kp F3       &kp F12                        &trans    &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &sl PWD    &trans 
                                          &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
