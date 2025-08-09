@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"  
@@ -22,7 +23,7 @@
 #define GM_QWE 3
 #define GM_ALT 4
 #define NUMBERS  5
-#define SYMBOLS  6 
+#define MOUSEKEYS  6 
 #define NAV   7
 #define ADJUST 8
 #define PWD 9
@@ -124,14 +125,14 @@ ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_S
 ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
 ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
 //ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK COLEMAK_DEV NUMBERS SYMBOLS NAV  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK COLEMAK_DEV NUMBERS  NAV  GAMES, COMBO_TERM_SLOW)
 ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK COLEMAK_DEV  GAMES GM_QWE, COMBO_TERM_SLOW)
 ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK COLEMAK_DEV  GAMES GM_QWE NAV, COMBO_TERM_FAST)
 ZMK_COMBO(games_num,  &mo NUMBERS, LH0 LH1,    GAMES GM_QWE, COMBO_TERM_FAST)
 ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK COLEMAK_DEV NAV  GAMES GM_QWE, COMBO_TERM_FAST)
 ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK COLEMAK_DEV  , COMBO_TERM_FAST)
 ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT1 RT2,    ADJUST, COMBO_TERM_FAST)
-ZMK_COMBO(panic_colemak,  &to COLEMAK, RT3 RT4,    ADJUST, COMBO_TERM_FAST)
+//ZMK_COMBO(panic_colemak,  &to COLEMAK, RT3 RT4,    ADJUST, COMBO_TERM_FAST)
 
 
 / {
@@ -259,38 +260,39 @@ ZMK_COMBO(panic_colemak,  &to COLEMAK, RT3 RT4,    ADJUST, COMBO_TERM_FAST)
         keymap {
                 compatible = "zmk,keymap";
 
-                colemak_layer {
+
+no_hmr_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "CMAK"                                                  ;
+label= "nohmr"                                                  ;
 // └───────────────────────────────────────────────────────────┘                                                 ;
 
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &kp A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &hmr RSHFT N &hmr RCTL E  &hmr RALT I  &kp O   &trans   
+    &trans &kp A    &kp  R      &kp S     &kp T     &kp D               &kp H      &kp N     &kp E      &kp I     &kp O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
-                        &hhm LALT ESC   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT &mo SYMBOLS
+                         &mo ADJUST   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT  &mo MOUSEKEYS 
                         >;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-colemak_dev_layer {
+                home_row_mod_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "CMAK_DV"                                                  ;
+label= "hmr"                                                  ;
 // └───────────────────────────────────────────────────────────┘                                                 ;
 
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
-    &trans &kp A    &kp  R      &kp S     &kp T     &kp D               &kp H      &kp N     &kp E      &kp I     &kp O   &trans   
-    &trans&trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
-                        &trans   &trans &trans                              &trans   &trans &trans  
+    &trans &kp A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &trans     &trans     &trans     &trans   &trans   
+    &trans &trans  &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
+                        &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-               
+
 
                 games_layer {
 // ┌───────────────────────────────────────────────────────────┐
@@ -302,7 +304,7 @@ label= "GAMES"                                                  ;
 &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
 &trans &kp A   &kp R    &kp S       &kp T    &kp D                      &trans    &trans     &trans     &trans     &trans &trans 
 &trans &kp Z   &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
-                          &mo GM_ALT &kp TAB     &kp SPACE                 &trans   &trans &trans    
+                           &kp TAB  &mo GM_ALT     &kp SPACE                 &trans   &trans &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -317,7 +319,7 @@ label= "GM_QWE"                                                  ;
 &trans &kp Q   &kp W   &kp E    &kp R    &kp T                    &kp Y     &kp U     &kp I     &kp O     &kp P &trans 
 &trans &kp A   &kp S   &kp D    &kp F    &kp G                      &kp H &kp  J &kp  K  &kp  L  &kp  SEMI &trans 
 &trans &kp Z   &kp X  &kp C     &kp V     &kp B                     &kp N     &kp M     &kp COMMA &kp FSLH   &kp FSLH &trans 
-                          &mo GM_ALT &kp TAB     &kp SPACE                 &trans   &trans &trans    
+                          &kp TAB   &mo GM_ALT      &kp SPACE                 &trans   &trans &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -352,16 +354,16 @@ label= "12345"                                                 ;
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                symbol_layer {
+                mouse_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "!@#$%"                                                 ;
+label= "squeak!"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
- &trans     &kp EXCL   &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                    &kp CARET &kp AMPS  &kp STAR  &trans &trans   &trans 
- &trans    &kp TILDE   &kp GRAVE &kp PIPE &kp PLUS  &kp EQUAL                   &trans &kp LPRN  &kp LBRC  &kp LBKT   &kp LT  &trans 
- &trans    &kp BSLH  &trans &kp UNDER  &kp MINUS  &trans                      &trans  &kp RPRN &kp RBRC  &kp RBKT  &kp GT    &trans 
-                                   &kp LALT   &kp LSHFT   &trans                &trans    &trans    &trans  
+ &trans   &kp PG_UP &trans  &mmv MOVE_UP     &trans  &trans               &trans   &trans   &trans  &trans  &trans   &trans 
+ &trans &kp PG_DN  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans   &trans   &mkp  LCLK   &mkp  MCLK &mkp  RCLK  &kp ESC  &trans 
+ &trans    &trans   &trans   &trans  &trans  &trans                     &trans   &trans   &trans  &trans  &trans   &trans 
+                            &kp LALT   &kp LSHFT   &kp LCTRL            &trans   &trans   &trans 
                         >;
                 };
 
@@ -373,7 +375,7 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT  &sk RGUI &td_ltgt   &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &kp GUI &td_ltgt   &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp DEL                         &caps_word    &sk RSHFT  &sk RCTL    &sk RALT  &kp ESC     &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp SPACE                     &kp CAPS    &td_paren    &td_cbr    &td_bkt    &kp BSLH   &trans 
                                   &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
@@ -387,10 +389,10 @@ label= "ADJUST"                                                ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-&trans &kp C_NEXT &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_PRV  &bt BT_SEL 0 &bt BT_NXT  &to GM_QWE   &to GAMES &trans 
-&trans &kp C_PLAY  &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &sk RSHFT &sk RCTL  &sk RALT   &sk RGUI   &trans  
-&trans &kp C_STOP &kp F1    &kp F2   &kp F3       &kp F12                     &to COLEMAK_DEV   &kp C_VOL_DN &kp C_VOL_UP   &kp C_MUTE &sl PWD    &trans 
-                                         &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
+&trans &kp F10 &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_PRV  &bt BT_SEL 0 &bt BT_NXT  &kp  C_VOL_DN   &kp C_VOL_UP &trans 
+&trans &kp F11   &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &sk RSHFT &sk RCTL  &sk RALT   &sk RGUI   &trans  
+&trans  &kp F12 &kp F1    &kp F2   &kp F3       &kp F12                     &trans    &to COLEMAK &to COLEMAK_DEV   &to GAMES  &to GM_QWE     &trans 
+                            &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
