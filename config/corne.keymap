@@ -18,15 +18,14 @@
 
 
 #define COLEMAK   0
-#define COLEMAK_DEV 1
-#define GAMES  2
-#define GM_QWE 3
-#define GM_ALT 4
-#define NUMBERS  5
-#define MOUSEKEYS  6 
-#define NAV   7
-#define ADJUST 8
-#define PWD 9
+#define GAMES  1
+#define GM_QWE 2
+#define GM_ALT 3
+#define NUMBERS  4
+#define MOUSEKEYS  5 
+#define NAV   6
+#define ADJUST 7
+#define PWD 8
 
 #define QUICK_TAP_MS 175
 
@@ -95,42 +94,42 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 35
 /* Brackets (horizontal right hand) */
-ZMK_COMBO(dcbr,  &dbl_cbr,      RT0 RT1,     COLEMAK COLEMAK_DEV NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK COLEMAK_DEV NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK COLEMAK_DEV NUMBERS, COMBO_TERM_FAST)
-ZMK_COMBO(dlt,  &dbl_ltgt,      RB2 RB3,     COLEMAK COLEMAK_DEV, COMBO_TERM_FAST)
+ZMK_COMBO(dcbr,  &dbl_cbr,      RT0 RT1,     COLEMAK  NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(dpar,  &dbl_paren,    RM0 RM1,     COLEMAK  NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(dbkt,  &dbl_bkt,      RB0 RB1,     COLEMAK  NUMBERS, COMBO_TERM_FAST)
+ZMK_COMBO(dlt,  &dbl_ltgt,      RB2 RB3,     COLEMAK , COMBO_TERM_FAST)
 
 /* Other symbols (vertical combos) */
-ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
+ZMK_COMBO(exclm, &kp EXCL,      LT4 LM4,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(at,    &kp AT,        LT3 LM3,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(hash,  &kp HASH,      LT2 LM2,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(dllr,  &kp DLLR,      LT1 LM1,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(prcnt, &kp PRCNT,     LT0 LM0,     COLEMAK   , COMBO_TERM_SLOW)
 
-ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
+ZMK_COMBO(caret, &kp CARET,     RT0 RM0,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,      RT1 RM1,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(star,  &kp STAR,      RT2 RM2,     COLEMAK   , COMBO_TERM_SLOW)
 
-ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,     LM4 LB4,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(grave, &kp GRAVE,     LM3 LB3,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(under, &kp UNDER,     LM2 LB2,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS,     LM1 LB1,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(plus, &kp PLUS,       LM0 LB0,     COLEMAK   , COMBO_TERM_SLOW)
 
-ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(lt, &kp RS(SEMI),     RM2 RB2,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,      RM0 RB0,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,     RM1 RB1,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(lt, &kp RS(SEMI),     RM2 RB2,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(gt, &kp SEMI,         RM3 RB3,     COLEMAK   , COMBO_TERM_SLOW)
 
-ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-//ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK COLEMAK_DEV  , COMBO_TERM_SLOW)
-ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK COLEMAK_DEV NUMBERS  NAV  GAMES, COMBO_TERM_SLOW)
-ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK COLEMAK_DEV  GAMES GM_QWE, COMBO_TERM_SLOW)
-ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK COLEMAK_DEV  GAMES GM_QWE NAV, COMBO_TERM_FAST)
+ZMK_COMBO(squot,  &kp SQT, RM3 RT3,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(dquot,  &kp RS(SQT), RM4 RT4,     COLEMAK   , COMBO_TERM_SLOW)
+//ZMK_COMBO(scln_ent,  &scln_ret, RM4 RB4,     COLEMAK   , COMBO_TERM_SLOW)
+ZMK_COMBO(nav_ret2,  &kp RET, RH0 RM4,    COLEMAK  NUMBERS  NAV  GAMES, COMBO_TERM_SLOW)
+ZMK_COMBO(bkspc_ret,  &kp RET, LH0 LM4,    COLEMAK   GAMES GM_QWE, COMBO_TERM_SLOW)
+ZMK_COMBO(rh_adj,  &mo ADJUST, RH0 RH1,    COLEMAK   GAMES GM_QWE NAV, COMBO_TERM_FAST)
 ZMK_COMBO(games_num,  &mo NUMBERS, LH0 LH1,    GAMES GM_QWE, COMBO_TERM_FAST)
-ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK COLEMAK_DEV NAV  GAMES GM_QWE, COMBO_TERM_FAST)
-ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK COLEMAK_DEV  , COMBO_TERM_FAST)
+ZMK_COMBO(lh_del,  &kp DEL, LH0 LH1,    COLEMAK  NAV  GAMES GM_QWE, COMBO_TERM_FAST)
+ZMK_COMBO(cw_trigger,  &caps_word, RH1 RM1,    COLEMAK   , COMBO_TERM_FAST)
 ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT1 RT2,    ADJUST, COMBO_TERM_FAST)
 //ZMK_COMBO(panic_colemak,  &to COLEMAK, RT3 RT4,    ADJUST, COMBO_TERM_FAST)
 
@@ -263,31 +262,15 @@ ZMK_COMBO(bt_clear,  &bt BT_CLR, RT0 RT1 RT2,    ADJUST, COMBO_TERM_FAST)
 
 no_hmr_layer {
 // ┌───────────────────────────────────────────────────────────┐
-label= "nohmr"                                                  ;
+label= "CMAK"                                                  ;
 // └───────────────────────────────────────────────────────────┘                                                 ;
 
    bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
     &trans &kp Q     &kp W     &kp F     &kp P     &kp G                &kp J     &kp L     &kp U     &kp Y     &kp SQT   &trans   
-    &trans &kp A    &kp  R      &kp S     &kp T     &kp D               &kp H      &kp N     &kp E      &kp I     &kp O   &trans   
+    &trans &kp A &hml LALT  R   &hml LCTL S  &hml LSHFT T    &kp D       &kp H      &hml RSHFT N  &hml RCTL E   &hml RALT I  &kp O   &trans   
     &trans &z_ret     &kp X     &kp C     &kp V     &kp B                &kp K     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans 
                          &mo ADJUST   &lt NUMBERS TAB   &hhm LCTRL BKSP      &tm NAV SPC  &sk RSHFT  &mo MOUSEKEYS 
-                        >;
-                };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-                home_row_mod_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "hmr"                                                  ;
-// └───────────────────────────────────────────────────────────┘                                                 ;
-
-   bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans &trans   &trans   &trans    &trans    &trans                    &trans     &trans     &trans     &trans     &trans &trans 
-    &trans &kp A &hml LALT  R   &hml LCTL S  &hml LSHFT T &kp D   &kp H  &trans     &trans     &trans     &trans   &trans   
-    &trans &trans  &trans  &trans     &trans     &trans                     &trans     &trans     &trans &trans   &trans &trans 
-                        &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
 
@@ -375,7 +358,7 @@ label= "NAV"                                                 ;
 // └───────────────────────────────────────────────────────────┘
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &kp GUI &td_ltgt   &trans 
+   &trans  &kp PG_UP    &kp HOME    &kp UP    &kp END    &trans                         &kp KP_NUM    &kp PSCRN    &kp INSERT &kp RGUI &td_ltgt   &trans 
    &trans  &kp PG_DN    &kp LEFT &kp DOWN  &kp RIGHT    &kp DEL                         &caps_word    &sk RSHFT  &sk RCTL    &sk RALT  &kp ESC     &trans 
    &trans     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &kp SPACE                     &kp CAPS    &td_paren    &td_cbr    &td_bkt    &kp BSLH   &trans 
                                   &kp ESC &kp TAB   &trans                           &trans    &trans    &trans  
@@ -390,8 +373,8 @@ label= "ADJUST"                                                ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &trans &kp F10 &kp F7   &kp F8 &kp F9      &kp F10                           &bt BT_PRV  &bt BT_SEL 0 &bt BT_NXT  &kp  C_VOL_DN   &kp C_VOL_UP &trans 
-&trans &kp F11   &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &sk RSHFT &sk RCTL  &sk RALT   &sk RGUI   &trans  
-&trans  &kp F12 &kp F1    &kp F2   &kp F3       &kp F12                     &trans    &to COLEMAK &to COLEMAK_DEV   &to GAMES  &to GM_QWE     &trans 
+&trans &kp F11   &kp F4 &kp F5    &kp F6        &kp F11                      &sl PWD    &sk RSHFT &sk RCTL  &sk RALT   &sk RGUI   &kp ESC  
+&trans  &kp F12 &kp F1    &kp F2   &kp F3       &kp F12                     &trans    &to COLEMAK   &to GAMES  &to GM_QWE  &sl PWD    &trans 
                             &kp LALT   &kp LSHFT   &kp LCTL                &trans    &trans    &trans    
                         >;
                 };
